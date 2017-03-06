@@ -9,4 +9,4 @@ Simple crud basic model homework excercise
 
 
 
-Hints:  Are you requiring your db folder, are you requiring your model folder, What is postman used for? What are the HTTP request?  Is the browser a client? is postman a client? What is a Client? What's the deal with airplane peanuts?
+Hints:  Are you requiring your db folder, are you requiring your model folder, What is postman used for? Did you click x-www-form-encoded, in the body or the params in postman? What are the HTTP request?  Is the browser a client? is postman a client? What is a Client? Did you require 'body-parser'?  Did you google the error?  What's the deal with airplane peanuts?
