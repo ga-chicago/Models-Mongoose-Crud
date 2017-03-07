@@ -18,7 +18,7 @@ app.get('/kitties', function(request, response){
 	});
 });
 
-app.post('/kitties', function(request, resonse){
+app.post('/kitties', function(request, response){
 	var name = request.body.name;
 	var breed = request.body.breed;
 	var isGoodKitty = request.body.isGoodKitty;
@@ -33,7 +33,7 @@ app.patch('/kitties', function(request, response){
 	var isGoodKitty = require.body.isGoodKitty;
 
 	Kitty.findById(id, function(err, kitty){
-		kitty.isGoodKitty = isGoodKitty
+		kitty.isGoodKitty = isGoodKitty;
 		kitty.save();
 		response.send('success');
 	})
@@ -42,7 +42,7 @@ app.patch('/kitties', function(request, response){
 app.delete('/kitties', function(request, response){
 	var id = request.body.id;
 
-	MexicanFood.findById(id, function(err, kitty){
+	Kitty.findById(id, function(err, kitty){
 		kitty.remove();
 		response.send('success')
 	})
