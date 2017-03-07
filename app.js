@@ -9,10 +9,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 require('./db/animalz.js');
 
+//connect to modal//
 app.get('/Animal', function(request, response){
 	Animal.find(function(error, animals){
 		//assuming there is no error
-		response.json(animals);
+		response.json(animal);
 	});
 });
 
@@ -62,6 +63,6 @@ app.delete('/Animal', function(request, response){
 })
 
 
-server.listen(3000, function(){
+server.listen(4000, function(){
 	console.log("listening on port 3000");
 })

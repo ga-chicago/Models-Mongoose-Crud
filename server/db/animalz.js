@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var connectionString = 'mongodb://localhost/animal';
+var connectionString = 'mongodb://localhost/animalz.js';
 
 mongoose.connect(connectionString);
 
