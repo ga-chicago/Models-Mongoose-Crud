@@ -11,6 +11,7 @@ require('./db/db');
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/kitties', function(request, response){
+	console.log("success");
 	Kitty.find(function(err, kitties){
 		response.json(kitties);
 
@@ -22,7 +23,7 @@ app.post('/kitties', function(request, resonse){
 	var breed = request.body.breed;
 	var isGoodKitty = request.body.isGoodKitty;
 
-	var kitten = new Kitty ({name: name, breed: breed, isGoodKitty: isGoodKitty});
+	var kitten = new Kitty({name: name, breed: breed, isGoodKitty: isGoodKitty});
 	kitten.save();
 	response.send("success");
 });
