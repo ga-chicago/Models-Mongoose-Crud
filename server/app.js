@@ -46,6 +46,14 @@ app.patch('/animals', function(req, res){
   });
 });
 
+app.put('/animals/:id', function(req, res){
+  console.log(req.params.id)
+  var name = req.body.name;
+  zooAnimals.findByIdAndUpdate(req.params.id, req.body, function(err, animals){
+    res.json(animals);
+  });
+});
+
 app.delete('/animals', function(req, res){
   var id = req.body.id;
   var name = req.body.name;
