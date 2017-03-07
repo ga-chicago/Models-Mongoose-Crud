@@ -1,5 +1,6 @@
 var express    = require('express');
 var app		   = express();
+var path 	   = require('path')
 var server     = require('http').createServer(app);
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
@@ -9,10 +10,13 @@ require('./db/db.js');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
 
 app.get('/animals', function(req, res){
 	Animal.find(function(err, animals){
-		res.json(animals);
+		// res.json(animals);
+		res.render('animals');
 	});
 });
 
