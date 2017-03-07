@@ -1,10 +1,11 @@
 # Models-Mongoose-Crud
 Simple crud basic model homework excercise
 
-1.  Create an express app, with a db folder, and a model folder.
-2.  Set up the DB connection in the db folder with a database called animals
-3.  Set up the model schema (aka wireframe object) in the model folder.  (file name -> Animal.js)
+<!-- 1.  Create an express app, with a db folder, and a model folder. -->
+<!-- 2.  Set up the DB connection in the db folder with a database called animals -->
+<!-- 3.  Set up the model schema (aka wireframe object) in the model folder.  (file name -> Animal.js) -->
 4.  Create the 5 methods in your server file (the http verbs, what are they?).  
+1. get 2. post 3. patch 4. delete 5. head
 5.  Test each route with postman 
 
 
