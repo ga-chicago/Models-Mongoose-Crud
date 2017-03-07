@@ -27,12 +27,24 @@ app.post('/animals', function(request, response){
 
 
 app.patch('/animals', function(request, response){
-	response.send("success from patch");
+	var id = request.body.id;
+	var ferocity = request.body.ferocity;
+
+	Animal.findById(id, function(err, animal){
+		animal.ferocity = ferocity;
+		animal.save();
+		response.send("success from patch")
+	})
 })
 
 
 app.delete('/animals', function(request, response){
-	response.send("success from delete")
+	var id = request.body.id;
+
+	Animal.findById(id, function(err, animal){
+		animal.remove();
+		response.send("success from delete");
+	})
 })
 
 
