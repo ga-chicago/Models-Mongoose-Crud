@@ -56,6 +56,8 @@ app.delete('/animals', function(req, res){			//delete listener
 		res.send('animal deleted')					//response request
 	})
 })
+//everything worked until I added this and hbs, file, layout.hbs
+
 //render form for mongoose
 app.get('/animal', function(req, res){
 	res.render('animal');

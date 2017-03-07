@@ -1,3 +1,4 @@
+//define mongoose collection
 var mongoose = require('mongoose');
 
 var AnimalSchema = new mongoose.Schema({

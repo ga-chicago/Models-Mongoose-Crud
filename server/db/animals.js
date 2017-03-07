@@ -1,3 +1,4 @@
+//the mongoose database
 var mongoose = require('mongoose');
 var mgconnected = 'mongodb://localhost/animal'
 
