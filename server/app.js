@@ -1,12 +1,20 @@
 var express = require('express'),
 	app		= express(),
 	server	= require('http').createServer(app),
+	path 	= require('path'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	Animal = require('./models/Animal.js');
 require('./db/db');
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
+app.get('/home', function(request, response){
+	response.render('home');
+})
+
 
 app.get('/animals', function(request, response){
 	Animal.find(function(err, animals){
@@ -33,7 +41,18 @@ app.patch('/animals', function(request, response){
 	Animal.findById(id, function(err, animal){
 		animal.ferocity = ferocity;
 		animal.save();
-		response.send("success from patch")
+		response.send("success from patch");
+	})
+})
+
+app.put('/animals', function(request, response){
+	var id = request.body.id;
+	var type = request.body.type;
+
+	Animal.findById(id, function(err, animal){
+		animal.type = type;
+		animal.save();
+		response.send("success from put");
 	})
 })
 
