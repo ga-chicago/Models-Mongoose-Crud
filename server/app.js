@@ -4,43 +4,45 @@ var app = express();
 var server = require('http').createServer(app);
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var MexicanFood = require('./models/MexicanFood.js');
+var Kitty = require('./models/Animal.js');
 
 require('./db/db');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/yummy', function(request, response){
-	MexicanFood.find(function(err, food){
-		response.json(food);
+app.get('/kitties', function(request, response){
+	Kitty.find(function(err, kitties){
+		response.json(kitties);
 
 	});
 });
 
-app.post('/yummy', function(request, resonse){
-	var type = request.body.type;
-	var sauce = request.body.sauce;
-	var side = request.body.side;
+app.post('/kitties', function(request, resonse){
+	var name = request.body.name;
+	var breed = request.body.breed;
+	var isGoodKitty = request.body.isGoodKitty;
 
-	var fiesta = new MexicanFood ({type: type, sauce: sauce, side: side});
-	fiest.save();
+	var kitten = new Kitty ({name: name, breed: breed, isGoodKitty: isGoodKitty});
+	kitten.save();
 	response.send("success");
 });
 
-app.patch('/yummy', function(request, response){
+app.patch('/kitties', function(request, response){
 	var id = request.body.id;
+	var isGoodKitty = require.body.isGoodKitty;
 
-	MexicanFood.findById(id, function(err, food){
-		food.save();
+	Kitty.findById(id, function(err, kitty){
+		kitty.isGoodKitty = isGoodKitty
+		kitty.save();
 		response.send('success');
 	})
 });
 
-app.delete('/yummy', function(request, response){
+app.delete('/kitties', function(request, response){
 	var id = request.body.id;
 
-	MexicanFood.findById(id, function(err, food){
-		food.remove();
+	MexicanFood.findById(id, function(err, kitty){
+		kitty.remove();
 		response.send('success')
 	})
 })
