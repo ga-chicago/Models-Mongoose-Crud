@@ -9,6 +9,7 @@ require('./db/db.js');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+
 app.get('/animals', function(req, res){
 	Animal.find(function(err, animals){
 		res.json(animals);
