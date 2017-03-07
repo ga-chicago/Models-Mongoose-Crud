@@ -8,6 +8,6 @@ var AnimalSchema = new mongoose.Schema({
   age: Number
 });
 
-var animalModel = mongoose.model('ZooAnimals', AnimalSchema);
+var animalModel = mongoose.model('zooAnimals', AnimalSchema);
 
 module.exports = animalModel;
