@@ -1,0 +1,24 @@
+{
+  "name": "models-mongoose-crud",
+  "version": "1.0.0",
+  "description": "Simple crud basic model homework excercise",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasg3728/Models-Mongoose-Crud.git"
+  },
+  "author": "",
+  "license": "MIT",
+    "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.8.6"
+  },
+  "bugs": {
+    "url": "https://github.com/matiasg3728/Models-Mongoose-Crud/issues"
+  },
+  "homepage": "https://github.com/matiasg3728/Models-Mongoose-Crud#readme"
+}
