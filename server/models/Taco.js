@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var TacoSchema = new taco.Schema({
+var TacoSchema = new mongoose.Schema({
 	protien: {type: String, required: true},
 	shell: String,
 	inches: Number,
