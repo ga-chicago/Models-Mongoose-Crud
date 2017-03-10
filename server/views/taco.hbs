@@ -1,0 +1,62 @@
+<h1>Tacos!</h1>
+
+<form action='/burrito' method='post'>
+	<input type="text" name="protien" placeholder="Protien">
+	<input type="text" name="shell" placeholder="Kind of shell">
+	<input type="text" name="inches" placeholder="Inches">
+	<input type="text" name="salsa" placeholder="Spicyness">
+	<input type="text" name="rice" placeholder="T/F Rice">
+	<input type="text" name="beans" placeholder="T/F Beans">
+	<input type="text" name="fajitaVeg" placeholder="T/F Fajita Veggies">
+	<input type="text" name="cheese" placeholder="T/F Cheese">
+	<input type="text" name="cheeseType" placeholder="Kind of Cheese">
+	<input type="text" name="comment" placeholder="Comments!">
+	<input type="submit" value="Tell Me!" id='btn'>
+</form>
+
+<table border=".5">
+	{{#each tacoArray}}
+	<tr data-id='{{this.id}}'>
+		<td>
+			<input type='text' value='{{this.protien}}' class='protien'>
+		</td>
+		<td>
+			<input type='text' value='{{this.shell}}' class='shell'>
+		</td>
+		<td>
+			<input type='text' value='{{this.inches}}' class='inches'>
+		</td>
+		<td>
+			<input type='text' value='{{this.salsa}}' class='salsa'>
+		</td>
+		<td>
+			<input type='text' value='{{this.rice}}' class='rice'>
+		</td>
+		<td>
+			<input type='text' value='{{this.beans}}' class='beans'>
+		</td>
+		<td>
+			<input type='text' value='{{this.fajitaVeg}}' class='fajitaVeg'>
+		</td>
+		<td>
+			<input type='text' value='{{this.cheese}}' class='cheese'>
+		</td>
+		<td>
+			<input type='text' value='{{this.cheeseType}}' class='cheeseType'>
+		</td>
+		<td>
+			<input type='text' value='{{this.comment}}' class='comment'>
+		</td>
+		<td>
+			<button id="btn" class="editTaco">
+				Change
+			</button>
+		</td>
+		<td>
+			<button id="btn" class="deleteTaco">
+				Delete
+			</button>
+		</td>
+	</tr>
+	{{/each}}
+</table>
